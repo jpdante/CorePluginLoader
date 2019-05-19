@@ -12,6 +12,8 @@ var plugins = pluginLoader.LoadPlugin(assemblyFileName: "./Plugins/MyPlugin/MyPl
 * `T:` Plugin class or interface type
 * `assemblyFileName:` Path to the assembly DLL file
 
+See examples of projects in [examples/](./examples/)
+
 ## Usage
 To make use of plugins you need at least two projects
 1) The Host that loads the plugins
