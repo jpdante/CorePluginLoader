@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CorePluginLoader.Testing.Plugin1\CorePluginLoader.Testing.Plugin1.csproj" />
+    <ProjectReference Include="..\CorePluginLoader.Testing\CorePluginLoader.Testing.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy /Y &quot;$(TargetPath)&quot; &quot;$(SolutionDir)Testing\CorePluginLoader.Testing\bin\Debug\netcoreapp2.2\Plugins\Plugin2&quot;" />
+  </Target>
+
+</Project>
